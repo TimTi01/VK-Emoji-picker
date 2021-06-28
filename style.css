@@ -51,6 +51,7 @@ body {
     opacity: 0;
 }
 
+
 .svg_conteiner {
     position: absolute;
     display: flex;
@@ -62,30 +63,59 @@ body {
     bottom: 0;
 }
 
+.svg_conteiner_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 72px;
+}
+
+.clock_icon,
+.smile_icon,
 .svg_img {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath opacity='.4' d='M0 0h24v24H0z'/%3E%3Cpath fill='%23828A99' fill-rule='nonzero' d='M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm18.3 0a8.3 8.3 0 1 0-16.6 0 8.3 8.3 0 0 0 16.6 0zm-11.05-.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm5.5 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z'/%3E%3Cpath stroke='%23828A99' stroke-width='1.7' d='M9 14.85c.833.767 1.833 1.15 3 1.15s2.167-.383 3-1.15' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
     z-index: 4;
 }
 
+.clock_icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='21' height='21' id='Capa_1' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath d='M347.216,301.211l-71.387-53.54V138.609c0-10.966-8.864-19.83-19.83-19.83c-10.966,0-19.83,8.864-19.83,19.83v118.978 c0,6.246,2.935,12.136,7.932,15.864l79.318,59.489c3.569,2.677,7.734,3.966,11.878,3.966c6.048,0,11.997-2.717,15.884-7.952 C357.766,320.208,355.981,307.775,347.216,301.211z' fill='%2399A2AD'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cg%3E%3Cpath d='M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.833,256-256S397.167,0,256,0z M256,472.341 c-119.275,0-216.341-97.066-216.341-216.341S136.725,39.659,256,39.659c119.295,0,216.341,97.066,216.341,216.341 S375.275,472.341,256,472.341z' fill='%2399A2AD'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E");
+}
+
+.smile_icon,
+.svg_img {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath opacity='.4' d='M0 0h24v24H0z'/%3E%3Cpath fill='%23828A99' fill-rule='nonzero' d='M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm18.3 0a8.3 8.3 0 1 0-16.6 0 8.3 8.3 0 0 0 16.6 0zm-11.05-.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm5.5 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z'/%3E%3Cpath stroke='%23828A99' stroke-width='1.7' d='M9 14.85c.833.767 1.833 1.15 3 1.15s2.167-.383 3-1.15' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.clock_icon:hover,
+.smile_icon:hover {
+    background-color: #d8dbe0;
+}
 .svg_img:hover {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath opacity='.4' d='M0 0h24v24H0z'/%3E%3Cpath fill='%23545a66' fill-rule='nonzero' d='M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm18.3 0a8.3 8.3 0 1 0-16.6 0 8.3 8.3 0 0 0 16.6 0zm-11.05-.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm5.5 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z'/%3E%3Cpath stroke='%23545a66' stroke-width='1.7' d='M9 14.85c.833.767 1.833 1.15 3 1.15s2.167-.383 3-1.15' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+.icon_active {
+    background-color: #fff;
+}
+
+
+
 .emoji {
     display: flex;
+    flex-direction: column;
     visibility: hidden;
     position: absolute;
     width: 290px;
     height: 280px;
     border: 1px solid #C5D0DB;
     border-radius: 4px;
-    background-color: rgba(203, 245, 247, 0.2);
+    background-color: #fff;
     z-index: 999;
     bottom: 45px;
     right: 0;
@@ -95,4 +125,68 @@ body {
     visibility: visible;
 }
 
+.emoji_wrapSmile {
+    height: calc(100% - 36px);
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.emoji_recent {
+    height: calc(100% - 36px);
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.recent_smile-conteiner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 4px;
+}
+
+.wrap_hiden {
+    display: none;
+}
+
+.emogi_panel {
+    height: 36px;
+    width: 100%;
+    background-color: #EBEEF2;
+}
+
 /* ------------------- */
+.emoji_title {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15px;
+    color: #939393;
+    padding-left: 4px;
+}
+
+.smile_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 26px;
+    width: 26px;
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+.smile_wrap:hover {
+    background: #F0F2F5;
+    border-radius: 3px;
+}
+
+.smile_conteiner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 4px;
+}
+
