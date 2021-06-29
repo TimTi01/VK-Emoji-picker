@@ -11,7 +11,7 @@ body {
     position: relative;
 }
 
-.textbox {
+.container__textbox {
     position: relative;
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-.text-input {
+.textbox__textInput {
     width: 84%;
     max-height: 100%;
     font-size: 13px;
@@ -35,7 +35,7 @@ body {
     z-index: 1;
 }
 
-.placeholder {
+.textbox__placeholder {
     position: absolute;
     font-size: 13px;
     font-weight: 400;
@@ -52,7 +52,7 @@ body {
     display: none;
 }
 
-.svg_container {
+.container__svg {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -63,7 +63,7 @@ body {
     bottom: 0;
 }
 
-.svg_container_icon {
+.panel__icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,13 +125,13 @@ body {
     visibility: visible;
 }
 
-.emoji_wrapSmile {
+.emoji__wrapSmile {
     height: calc(100% - 36px);
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
 }
-.emoji_recent {
+.emoji__recent {
     height: calc(100% - 36px);
     width: 100%;
     overflow-y: auto;
@@ -149,7 +149,7 @@ body {
     display: none;
 }
 
-.emogi_panel {
+.emogi__panel {
     height: 36px;
     width: 100%;
     background-color: #EBEEF2;

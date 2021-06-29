@@ -1,12 +1,12 @@
 import emoji from './json.js';
 
-let textInput = document.body.querySelector('.text-input');
-let placeholder = document.body.querySelector('.placeholder');
-let svgContainer = document.body.querySelector('.svg_container');
+let textInput = document.body.querySelector('.textbox__textInput');
+let placeholder = document.body.querySelector('.textbox__placeholder');
+let svgContainer = document.body.querySelector('.container__svg');
 let emojiContainer = document.body.querySelector('.emoji');
-let emojiWrapSmile = document.body.querySelector('.emoji_wrapSmile');
-let emojiRecent = document.body.querySelector('.emoji_recent');
-let iconContainer = document.body.querySelector('.svg_container_icon');
+let emojiWrapSmile = document.body.querySelector('.emoji__wrapSmile');
+let emojiRecent = document.body.querySelector('.emoji__recent');
+let iconContainer = document.body.querySelector('.panel__icon');
 let smileIcon = document.body.querySelector('.smile_icon');
 let clockIcon = document.body.querySelector('.clock_icon');
 let recentContainer = document.body.querySelector('.recent_smile-container');
@@ -18,7 +18,6 @@ function main() {
     
     textInput.onblur = (el) => {
         placeholder.classList.remove("placeholder_opacity");
-        checkFocus();
     }
     
     svgContainer.onclick = (event) => {
