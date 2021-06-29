@@ -2,89 +2,83 @@ import emoji from './json.js';
 
 let textInput = document.body.querySelector('.text-input');
 let placeholder = document.body.querySelector('.placeholder');
-let svgConteiner = document.body.querySelector('.svg_conteiner');
-let emojiConteiner = document.body.querySelector('.emoji');
+let svgContainer = document.body.querySelector('.svg_container');
+let emojiContainer = document.body.querySelector('.emoji');
 let emojiWrapSmile = document.body.querySelector('.emoji_wrapSmile');
 let emojiRecent = document.body.querySelector('.emoji_recent');
-let iconConteiner = document.body.querySelector('.svg_conteiner_icon');
+let iconContainer = document.body.querySelector('.svg_container_icon');
 let smileIcon = document.body.querySelector('.smile_icon');
 let clockIcon = document.body.querySelector('.clock_icon');
-let recentConteiner = document.body.querySelector('.recent_smile-conteiner');
+let recentContainer = document.body.querySelector('.recent_smile-container');
 
-
-
-textInput.onfocus = (el) => {
-    placeholder.classList.toggle("placeholder_active");
-}
-
-textInput.onblur = (el) => {
-    placeholder.classList.toggle("placeholder_active");
-}
-
-textInput.addEventListener("keydown", () => {
-    if (getTextLenght() !== " ") {
-        placeholder.classList.add("placeholder_active-opacity");
-    } else if (getTextLenght() === "") {
-        placeholder.classList.remove("placeholder_active-opacity");
-    }
-})
-
-svgConteiner.addEventListener("click", () => {
-    emojiConteiner.classList.add("emoji_active");
-})
-
-
-for (let i = 0; i < emoji.length; i++) {
-    emojiWrapSmile.append(getDiv());
-    let emojiTitles = document.body.querySelectorAll('.emoji_title');
-    emojiTitles[i].innerHTML = emoji[i]['title'];
-    
-    emojiWrapSmile.append(getSmileConteiner()); //контейнер
-    let smileConteiner = document.body.querySelectorAll('.smile_conteiner');
-    for (let j = 0; j < emoji[i]['items'].length; j++) {
-        smileConteiner[i].append(getSmileWrap()); //обёртка
+function main() {
+    textInput.onfocus = (el) => {
+        placeholder.classList.add("placeholder_opacity");
     }
     
-    for (let k = 0; k < smileConteiner[i].children.length; k++) {
-        smileConteiner[i].children[k].innerHTML = emoji[i]['items'][k];
+    textInput.onblur = (el) => {
+        placeholder.classList.remove("placeholder_opacity");
+        checkFocus();
     }
-}
-
-emojiConteiner.onclick = (event) => {
-    let smile = event.target.innerHTML;
-    console.log(event.target);
-    if (event.target.className === 'smile_wrap') {
-        textInput.innerHTML += smile;
-
+    
+    svgContainer.onclick = (event) => {
         let target = event.target;
-
-        let clone = target.cloneNode(true);
-        recentConteiner.append(clone); 
+        if (target.className === 'svg_img') {
+            emojiContainer.classList.toggle("emoji_active");
+        }
     }
-}
 
-
-
-iconConteiner.onclick = (event) => {
-    let target = event.target;
-    if (target.className === 'smile_icon') {
-        smileIcon.classList.add("icon_active");
-        clockIcon.classList.remove("icon_active");
-
-        emojiWrapSmile.classList.remove("wrap_hiden");
-        emojiRecent.classList.add("wrap_hiden");
-    } else if (target.className === 'clock_icon') {
-        clockIcon.classList.add("icon_active");
-        smileIcon.classList.remove("icon_active");
+    for (let i = 0; i < emoji.length; i++) {
+        emojiWrapSmile.append(getDiv());
+        let emojiTitles = document.body.querySelectorAll('.emoji_title');
+        emojiTitles[i].innerHTML = emoji[i]['title'];
         
-        emojiWrapSmile.classList.add("wrap_hiden");
-        emojiRecent.classList.remove("wrap_hiden");
+        emojiWrapSmile.append(getSmileContainer());
+        let smileContainer = document.body.querySelectorAll('.smile_container');
+        for (let j = 0; j < emoji[i]['items'].length; j++) {
+            smileContainer[i].append(getSmileWrap());
+        }
+        
+        for (let k = 0; k < smileContainer[i].children.length; k++) {
+            smileContainer[i].children[k].innerHTML = emoji[i]['items'][k];
+        }
+    }
+    
+    emojiContainer.onclick = (event) => {
+        let smile = event.target.innerHTML;
+        let textInputText = textInput.outerText;
+        if (event.target.className === 'smile_wrap') {
+            textInput.innerHTML += smile;
+            if (textInputText != ' ') {
+                placeholder.classList.add('placeholder_hiden');
+            } else {
+                placeholder.classList.remove('placeholder_hiden');
+            }
+
+            let target = event.target;
+            let clone = target.cloneNode(true);
+            recentContainer.append(clone); 
+        }
+    }
+    
+    iconContainer.onclick = (event) => {
+        let target = event.target;
+        if (target.className === 'smile_icon') {
+            smileIcon.classList.add("icon_active");
+            clockIcon.classList.remove("icon_active");
+    
+            emojiWrapSmile.classList.remove("wrap_hiden");
+            emojiRecent.classList.add("wrap_hiden");
+        } else if (target.className === 'clock_icon') {
+            clockIcon.classList.add("icon_active");
+            smileIcon.classList.remove("icon_active");
+            
+            emojiWrapSmile.classList.add("wrap_hiden");
+            emojiRecent.classList.remove("wrap_hiden");
+        }
     }
 }
 
-function getTextLenght() {
-    return textInput.innerText;
-}
 
 function getDiv() {
     let div = document.createElement('div');
@@ -92,16 +86,17 @@ function getDiv() {
     return div;
 }
 
-
-function getSmileConteiner() {
+function getSmileContainer() {
     let div = document.createElement('div');
-    div.className = 'smile_conteiner';
+    div.className = 'smile_container';
     return div;
 }
-
 
 function getSmileWrap() {
     let div = document.createElement('div');
     div.className = 'smile_wrap';
     return div;
 }
+
+
+main();
